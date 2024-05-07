@@ -77,6 +77,5 @@ def load_data() -> [int, list]:
                 value = line.strip().split(": ")[1]
                 lst.append(value)
 
-            
         return balance, trackings
     
