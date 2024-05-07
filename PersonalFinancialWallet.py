@@ -12,7 +12,6 @@ class PersonalWallet:
             self.description = description
             PersonalWallet.number += 1
             
-
     def __init__(self, balance:int=0):
         self.balance = balance
         self.trackings = []
@@ -35,7 +34,6 @@ class PersonalWallet:
             description
         ))
         self.configure_balance(category, account)
-        save_data(self.view_balance(self.trackings))
 
     def update(self, id_tg: int, category: str, account: int, description: str) -> None:
         if (id_tg-1) > len(self.trackings):
@@ -50,8 +48,6 @@ class PersonalWallet:
             entrie.account = int(account)
         if description:
             entrie.description = description
-
-        save_data(self.view_balance(self.trackings))
 
     def search(self, s_filter: [str | int]) -> list:
         return filter(lambda tg: s_filter in (tg.create_date, tg.category, str(tg.account)), self.trackings)

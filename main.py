@@ -14,10 +14,11 @@ while True:
         input('Нажмите "Enter", чтобы продолжить')
             
     elif x == "2":
-        category = input("Введите категорию: ")
+        category = input("Введите категорию: ").title()
         account = int(input("Введите сумму: "))
         description = input("Введите описание: ")
         pw.insert(category, account, description)
+        save_data(pw.view_balance(pw.trackings))
         input("Добавлено")
             
     elif x == "3":
@@ -27,6 +28,7 @@ while True:
         account = input("Введите сумму: ")
         description = input("Введите описание: ")
         pw.update(id_tg, category, account, description)
+        save_data(pw.view_balance(pw.trackings))
         input("Обновлено")
             
     elif x == "4":
